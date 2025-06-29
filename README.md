@@ -1,2 +1,2 @@
 # zus_interview
-Zus Interview - Chess Simulation
+Zus Interview - Chess Simulation.
