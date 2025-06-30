@@ -12,4 +12,4 @@ class Bishop(ChessPiece):
         return abs(self.rank - opponent.rank) == abs(self.file - opponent.file)
     
     def __str__(self):
-        return "B"
+        return f"B({super().__str__()})"

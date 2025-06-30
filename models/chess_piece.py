@@ -18,4 +18,8 @@ class ChessPiece():
         raise NotImplementedError("This method should be overridden by subclasses")
 
     def __str__(self):
-        raise NotImplementedError("This method should be overridden by subclasses")
+        if self.color == Color.WHITE:
+            color_code = "W"
+        else:
+            color_code = "B"
+        return color_code

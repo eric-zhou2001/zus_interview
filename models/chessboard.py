@@ -57,9 +57,8 @@ class ChessBoard:
         display += "Black Pieces: " + ", ".join(str(p) for p in self.pieces[Color.BLACK]) + "\n"
         display += "Board:\n"
         # Add file labels (numbers) at the top
-        display += "   " + " ".join(str(i) for i in range(1, self.size+1)) + "\n"
+        display += "    " + "    ".join(chr(ord('a') + i) for i in range(self.size)) + "\n"
         for idx, row in enumerate(self.board):
             # Add rank labels (letters) at the start of each row
-            rank_label = chr(ord('a') + idx)
-            display += f"{rank_label}  " + " ".join(['.' if cell is None else str(cell) for cell in row]) + "\n"
+            display += f"{str(self.size - idx)}  " + " ".join([' .  ' if cell is None else str(cell) for cell in row]) + "\n"
         return display
