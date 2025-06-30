@@ -37,12 +37,14 @@ def main():
     i = 0
     while i < 15:
         rolls = random.choices(range(1, 7), k=2)
+        print("Rolls:", rolls)
+
         heads = random.choice([True, False])
+        print("heads:", heads)
+
         board.move_piece(b_rook, heads, sum(rolls))
         i += 1
-
-        print("Rolls:", rolls)
-        print("heads:", heads)
+    
         print("Black Rook moved to:", convert_indicies_to_position(b_rook.rank, b_rook.file))
         print(board)
         captured = board.is_captured(b_rook)
