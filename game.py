@@ -3,7 +3,6 @@ from models.chessboard import ChessBoard, PieceType
 from models.chess_piece import Color
 
 SIZE = 8
-REVERSE = 1
 
 def convert_position_to_indices(rank: str, file: str) -> tuple[int, int]:
     if len(rank) != 1 or len(file) != 1:
@@ -38,11 +37,11 @@ def main():
     i = 0
     while i < 15:
         rolls = random.choices(range(1, 7), k=2)
-        heads = random.choice([True, False])
-        board.move_piece(b_rook, heads, sum(rolls) * REVERSE)
+        # heads = random.choice([True, False])
+        heads = True
+        board.move_piece(b_rook, heads, sum(rolls))
         i += 1
 
-        print(board)
         print("Rolls:", rolls)
         print("heads:", heads)
         print("Black Rook moved to:", convert_indicies_to_position(b_rook.rank, b_rook.file))
